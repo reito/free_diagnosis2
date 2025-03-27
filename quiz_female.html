@@ -357,7 +357,7 @@
             const total = scores.reduce((a, b) => a + b, 0);
             const percentages = scores.map(score => Math.round((score / total) * 100));
 
-            const types = ["プリンセスタイプ", "クイーンタイプ", "エンジェルタイプ"];
+            const types = ["プリンセスタイプ", "クールタイプ", "ナースタイプ"];
             const resultType = types[scores.indexOf(Math.max(...scores))];
 
             const params = new URLSearchParams({
