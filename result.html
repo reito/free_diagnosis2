@@ -233,36 +233,36 @@
         // キャラクター画像のマッピング
         const characterImages = {
             "キングタイプ": {
-                image: "img/キングタイプ.png",
+                image: "img/king_type.png",
                 name: "キングタイプ"
             },
             "ナイトタイプ": {
-                image: "img/ナイトタイプ.png",
+                image: "img/knight_type.png",
                 name: "ナイトタイプ"
             },
             "プリンスタイプ": {
-                image: "img/プリンスタイプ.png",
+                image: "img/prince_type.png",
                 name: "プリンスタイプ"
             },
             "アイドルタイプ": {
-                image: "img/アイドルタイプ.png",
+                image: "img/idol_type.png",
                 name: "アイドルタイプ"
             },
             "バリキャリタイプ": {
-                image: "img/バリキャリタイプ.png",
+                image: "img/career_type.png",
                 name: "バリキャリタイプ"
             },
             "ナースタイプ": {
-                image: "img/ナースタイプ.png",
+                image: "img/nurse_type.png",
                 name: "ナースタイプ"
             },
             "バランスタイプ": {
                 male: {
-                    image: "img/男性版_バランスタイプ.png",
+                    image: "img/balance_type_male.png",
                     name: "バランスタイプ（男性）"
                 },
                 female: {
-                    image: "img/女性版_バランスタイプ.png",
+                    image: "img/balance_type_female.png",
                     name: "バランスタイプ（女性）"
                 }
             }
@@ -347,6 +347,12 @@
             const characterImage = document.getElementById("character-image");
             const characterName = document.getElementById("character-name");
             const balanceImage = characterImages["バランスタイプ"][gender];
+            console.log("Loading balanced image:", balanceImage.image);
+            characterImage.onerror = function() {
+                console.error("Failed to load image:", this.src);
+                // フォールバック: エラー時に別の画像を試す
+                this.src = encodeURI(balanceImage.image);
+            };
             characterImage.src = balanceImage.image;
             characterImage.alt = balanceImage.name;
             characterName.textContent = balanceImage.name;
@@ -354,6 +360,12 @@
         } else if (characterImages[displayType]) {
             const characterImage = document.getElementById("character-image");
             const characterName = document.getElementById("character-name");
+            console.log("Loading type image:", characterImages[displayType].image);
+            characterImage.onerror = function() {
+                console.error("Failed to load image:", this.src);
+                // フォールバック: エラー時に別の画像を試す
+                this.src = encodeURI(characterImages[displayType].image);
+            };
             characterImage.src = characterImages[displayType].image;
             characterImage.alt = characterImages[displayType].name;
             characterName.textContent = characterImages[displayType].name;
