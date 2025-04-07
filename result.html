@@ -332,7 +332,7 @@
         document.getElementById("resultType").textContent = isBalanced 
             ? `あなたはバランスタイプのようです！` 
             : `${displayType}の割合が多いようです！`;
-        document.getElementById("resultText").textContent = descriptions[displayType];
+        document.getElementById("resultText").innerHTML = descriptions[displayType];
         
         // スコアの表示テキストを性別に応じて変更
         const percentageText = gender === 'male'
