@@ -188,6 +188,12 @@
             transition: width 1s ease;
         }
 
+        .percentage-display {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-left: 8px;
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 15px;
@@ -277,7 +283,7 @@
             <div class="graph-container">
                 <div class="graph-label">
                     <span id="type1-label"></span>
-                    <span id="type1-percentage"></span>%
+                    <span class="percentage-display"><span id="type1-percentage"></span>%</span>
                 </div>
                 <div class="graph-bar">
                     <div class="graph-fill" id="type1-bar"></div>
@@ -286,7 +292,7 @@
             <div class="graph-container">
                 <div class="graph-label">
                     <span id="type2-label"></span>
-                    <span id="type2-percentage"></span>%
+                    <span class="percentage-display"><span id="type2-percentage"></span>%</span>
                 </div>
                 <div class="graph-bar">
                     <div class="graph-fill" id="type2-bar"></div>
@@ -295,7 +301,7 @@
             <div class="graph-container">
                 <div class="graph-label">
                     <span id="type3-label"></span>
-                    <span id="type3-percentage"></span>%
+                    <span class="percentage-display"><span id="type3-percentage"></span>%</span>
                 </div>
                 <div class="graph-bar">
                     <div class="graph-fill" id="type3-bar"></div>
@@ -342,16 +348,26 @@
                 image: "img/nurse_type.png",
                 name: "ナースタイプ"
             },
-            "バランスタイプ": {
-                male: {
-                    image: "img/balance_type_male.png",
-                    name: "バランスタイプ（男性）"
-                },
-                female: {
-                    image: "img/balance_type_female.png",
-                    name: "バランスタイプ（女性）"
+            "バランスタイプ": userGender === 'female' ?
+                {
+                    male: {
+                        image: "img/balance_type_male.png",
+                        name: "バランスタイプ（男性）"
+                    },
+                    female: {
+                        image: "img/balance_type_female.png",
+                        name: "バランスタイプ（女性）"
+                    }
+                } : {
+                    male: {
+                        image: "img/balance_type_male.png",
+                        name: "バランスタイプ（男性）"
+                    },
+                    female: {
+                        image: "img/balance_type_female.png",
+                        name: "バランスタイプ（女性）"
+                    }
                 }
-            }
         };
 
         // URLから診断結果とスコア情報を取得
