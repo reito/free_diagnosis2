@@ -152,6 +152,47 @@
             transform: translateY(-1px);
         }
 
+        .result-graphs {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(106, 193, 208, 0.1);
+        }
+
+        .graph-container {
+            margin: 15px 0;
+        }
+
+        .graph-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 15px;
+        }
+
+        .graph-bar {
+            width: 100%;
+            height: 20px;
+            background: #e9f5f7;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .graph-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #6ac1d0 0%, #5fb5d0 100%);
+            border-radius: 10px;
+            transition: width 1s ease-out;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 15px;
@@ -205,6 +246,24 @@
 
             .character-image {
                 width: 150px;
+            }
+
+            .result-graphs {
+                padding: 15px;
+                margin: 20px auto;
+            }
+
+            .graph-container {
+                margin: 12px 0;
+            }
+
+            .graph-label {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+
+            .graph-bar {
+                height: 16px;
             }
         }
     </style>
