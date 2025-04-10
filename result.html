@@ -153,7 +153,7 @@
         }
 
         .result-graphs {
-            max-width: 500px;
+            max-width: 600px;
             margin: 30px auto;
             padding: 20px;
             background: #fff;
@@ -162,7 +162,7 @@
         }
 
         .graph-container {
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
         .graph-label {
@@ -171,26 +171,21 @@
             margin-bottom: 8px;
             font-weight: 500;
             color: #2c3e50;
-            font-size: 15px;
         }
 
         .graph-bar {
             width: 100%;
-            height: 20px;
+            height: 24px;
             background: #e9f5f7;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            position: relative;
         }
 
         .graph-fill {
             height: 100%;
+            width: 0;
             background: linear-gradient(135deg, #6ac1d0 0%, #5fb5d0 100%);
-            border-radius: 10px;
-            transition: width 1s ease-out;
-            position: absolute;
-            left: 0;
-            top: 0;
+            transition: width 1s ease;
         }
 
         @media (max-width: 480px) {
@@ -459,26 +454,44 @@
             document.getElementById('type2-label').textContent = 'バリキャリタイプ';
             document.getElementById('type3-label').textContent = 'ナースタイプ';
             
-            document.getElementById('type1-percentage').textContent = urlParams.get('idol');
-            document.getElementById('type2-percentage').textContent = urlParams.get('career');
-            document.getElementById('type3-percentage').textContent = urlParams.get('nurse');
+            const idolScore = parseInt(urlParams.get('idol')) || 0;
+            const careerScore = parseInt(urlParams.get('career')) || 0;
+            const nurseScore = parseInt(urlParams.get('nurse')) || 0;
             
-            document.getElementById('type1-bar').style.width = urlParams.get('idol') + '%';
-            document.getElementById('type2-bar').style.width = urlParams.get('career') + '%';
-            document.getElementById('type3-bar').style.width = urlParams.get('nurse') + '%';
+            document.getElementById('type1-percentage').textContent = idolScore;
+            document.getElementById('type2-percentage').textContent = careerScore;
+            document.getElementById('type3-percentage').textContent = nurseScore;
+            
+            // アニメーションのために少し遅延を入れる
+            setTimeout(() => {
+                document.getElementById('type1-bar').style.width = `${idolScore}%`;
+                document.getElementById('type2-bar').style.width = `${careerScore}%`;
+                document.getElementById('type3-bar').style.width = `${nurseScore}%`;
+            }, 100);
+
+            console.log('Female scores:', { idol: idolScore, career: careerScore, nurse: nurseScore });
         } else {
             // 男性の場合
             document.getElementById('type1-label').textContent = 'キングタイプ';
             document.getElementById('type2-label').textContent = 'ナイトタイプ';
             document.getElementById('type3-label').textContent = 'プリンスタイプ';
             
-            document.getElementById('type1-percentage').textContent = urlParams.get('king');
-            document.getElementById('type2-percentage').textContent = urlParams.get('knight');
-            document.getElementById('type3-percentage').textContent = urlParams.get('prince');
+            const kingScore = parseInt(urlParams.get('king')) || 0;
+            const knightScore = parseInt(urlParams.get('knight')) || 0;
+            const princeScore = parseInt(urlParams.get('prince')) || 0;
             
-            document.getElementById('type1-bar').style.width = urlParams.get('king') + '%';
-            document.getElementById('type2-bar').style.width = urlParams.get('knight') + '%';
-            document.getElementById('type3-bar').style.width = urlParams.get('prince') + '%';
+            document.getElementById('type1-percentage').textContent = kingScore;
+            document.getElementById('type2-percentage').textContent = knightScore;
+            document.getElementById('type3-percentage').textContent = princeScore;
+            
+            // アニメーションのために少し遅延を入れる
+            setTimeout(() => {
+                document.getElementById('type1-bar').style.width = `${kingScore}%`;
+                document.getElementById('type2-bar').style.width = `${knightScore}%`;
+                document.getElementById('type3-bar').style.width = `${princeScore}%`;
+            }, 100);
+
+            console.log('Male scores:', { king: kingScore, knight: knightScore, prince: princeScore });
         }
     </script>
 </body>
