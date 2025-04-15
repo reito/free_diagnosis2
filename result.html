@@ -96,40 +96,55 @@
         }
 
         .btn {
-            background: #06C755;
+            background: linear-gradient(135deg, #FF88B3 0%, #FF69B4 100%);
             color: #fff;
             border: none;
-            padding: 18px 30px;
+            padding: 16px 25px;
             font-size: 17px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
-            border-radius: 30px;
+            border-radius: 12px;
             transition: all 0.3s ease;
-            display: inline-block;
+            display: block;
             text-decoration: none;
-            margin: 10px auto;
+            margin: 0 auto;
             width: 100%;
-            max-width: 300px;
+            max-width: 320px;
             box-sizing: border-box;
-            box-shadow: 0 5px 15px rgba(6, 199, 85, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 136, 179, 0.2);
             text-align: center;
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(6, 199, 85, 0.4);
-            background: #05b34c;
+            box-shadow: 0 8px 20px rgba(255, 136, 179, 0.3);
+            background: linear-gradient(135deg, #FF69B4 0%, #FF88B3 100%);
         }
 
-        .btn.secondary {
-            background: #5fb5d0;
-            box-shadow: 0 5px 15px rgba(95, 181, 208, 0.3);
-            margin-top: 15px;
+        .btn-description {
+            font-size: 14px;
+            color: #666;
+            display: block;
+            font-weight: normal;
+            line-height: 1.6;
+            margin: 8px auto 25px;
+            max-width: 320px;
+            text-align: center;
         }
 
-        .btn.secondary:hover {
-            box-shadow: 0 8px 20px rgba(95, 181, 208, 0.4);
-            background: #54a9c4;
+        .cta-container {
+            text-align: center;
+            margin: 35px 0;
+            padding: 0 15px;
+        }
+
+        .cta-title {
+            color: #FF69B4;
+            font-size: 19px;
+            font-weight: 500;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
 
         .button-container {
@@ -192,6 +207,20 @@
             transition: width 1s ease;
         }
 
+        .btn.secondary {
+            background: linear-gradient(135deg, #6ac1d0 0%, #5fb5d0 100%);
+            font-size: 15px;
+            padding: 14px 25px;
+            max-width: 200px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(106, 193, 208, 0.2);
+        }
+
+        .btn.secondary:hover {
+            box-shadow: 0 8px 20px rgba(106, 193, 208, 0.3);
+            background: linear-gradient(135deg, #5fb5d0 0%, #6ac1d0 100%);
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 15px;
@@ -233,9 +262,14 @@
             }
 
             .btn {
-                padding: 16px 25px;
+                padding: 14px 20px;
                 font-size: 16px;
-                max-width: 280px;
+                max-width: 300px;
+            }
+
+            .btn-description {
+                font-size: 13px;
+                margin-bottom: 20px;
             }
 
             .return-link {
@@ -263,6 +297,11 @@
 
             .graph-bar {
                 height: 16px;
+            }
+
+            .cta-title {
+                font-size: 17px;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -310,7 +349,19 @@
         <div class="result-text" id="resultText"></div>
         <div class="percentages" id="percentages"></div>
 
-        <p class="cta-text">あなたのタイプに合わせたアドバイスで<br>理想のパートナーとの出会いをグッと引き寄せます！<br>まずはお気軽にご相談ください😊</p>
+        <div class="cta-container">
+            <p class="cta-title">あなたの恋愛・婚活の可能性を広げるために...<br>気になる方をチェック！ ✨</p>
+            
+            <a href="https://lin.ee/qSZORFf" class="btn">
+                魅力を引き出す恋愛心理学と<br>コーディネート
+            </a>
+            <p class="btn-description">男性脳・女性脳の違いや、引き寄せたい男性にモテる服装のポイントを詳しく解説！</p>
+
+            <a href="#" class="btn">
+                おためし婚活カウンセリング<br>Coming Soon...
+            </a>
+            <p class="btn-description">理想の出会いに向けて、あなたに合った婚活方法を提案しながらお試し婚活ができます！</p>
+        </div>
         
         <div class="button-container">
             <a href="index.html" class="btn secondary">
