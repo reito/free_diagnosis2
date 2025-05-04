@@ -450,24 +450,20 @@
                 nurse: parseInt(urlParams.get('nurse')) || 0
             };
 
-        // バランスタイプの判定を行う関数
-        function isBalancedType(scores, gender) {
-            if (gender === 'male') {
-                const values = [scores.king, scores.knight, scores.prince];
-                const max = Math.max(...values);
-                const min = Math.min(...values);
-                return (max - min) <= 5;
-            } else {
-                const values = [scores.idol, scores.career, scores.nurse];
-                const max = Math.max(...values);
-                const min = Math.min(...values);
-                return (max - min) <= 5;
-            }
-        }
+        // バランスタイプの判定
+        const isBalanced = userGender === "male" 
+            ? scores["キングタイプ"] === scores["ナイトタイプ"] && scores["キングタイプ"] === scores["プリンスタイプ"]
+            : scores["アイドルタイプ"] === scores["バリキャリタイプ"] && scores["アイドルタイプ"] === scores["マザータイプ"];
 
-        // バランスタイプかどうかを判定
-        const isBalanced = isBalancedType(scores, userGender);
-        const displayType = isBalanced ? "バランスタイプ" : resultType;
+        // 表示するタイプを決定
+        let displayType;
+        if (isBalanced) {
+            displayType = "バランスタイプ";
+        } else {
+            // スコアが最も高いタイプを表示
+            const maxScore = Math.max(...Object.values(scores));
+            displayType = Object.keys(scores).find(type => scores[type] === maxScore);
+        }
 
         // 結果を表示
         const resultTypeElement = document.getElementById("resultType");
