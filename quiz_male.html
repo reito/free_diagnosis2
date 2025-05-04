@@ -262,189 +262,54 @@
 
     <script>
         const questions = [
-            {
-                text: "友人との飲み会では、自分が話の中心になることが多い。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "気が付けば、他人の相談にのってアドバイスしていることが多い。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "新しいことに挑戦するのが好きで、思い立ったらすぐ行動するタイプだ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "用事がなければ自分からLINEや電話はしないタイプだ。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "リーダーやキャプテンという立場になることが多い方だ。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "「どうにかなるさ」と考える方だ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "デートでは、行き先やスケジュールは自分が決めたい方だ。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "食事に行く際、相手の好きな食べ物を気にかける方だ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "「突然の予定変更」にも柔軟に対応できる方だ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "「人の話を最後まで聞く」のが得意だ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "目標を立てると「絶対に達成する」と意気込む方だ。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "仲間内では「優しい」「気遣いができる」と言われることが多い。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "旅行では、スケジュールをガチガチに決めるより、現地の雰囲気で動きたい。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "「自分の意見はしっかり伝えるべき」と思う。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "家庭より仕事を優先してしまうタイプだ。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "「決められたルール」に縛られるのは苦手だ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "わりとコスパ重視なタイプだ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "「困った時は誰かに相談するのが一番」と思う。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "「今が楽しければそれでいい」と思うことがある。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "新しい環境に入ったとき、まずは自分から声をかけることが多い。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "相手の話をじっくり聞いてから、自分の意見を伝えるタイプだ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "「ノリで決めたこと」がうまくいくことが多い。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "「やると決めたら最後までやり遂げるべきだ」と思う。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "服装はデザインよりも着心地を重視する。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "「予定がない週末が一番好き」だ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "結婚したら家事は奥さんに任せたい。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "何事もNo. 1を目指したいタイプ。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "結婚したら共働き希望。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "ルールは忠実に守るタイプだ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "年上の女性と付き合うことに抵抗がない。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            // 新しい質問（キング）
-            {
-                text: "普段からオシャレには気を遣っている。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "食事などに行った際女性に奢ってもらうのには抵抗がある。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "思い立ったらすぐに行動するタイプだと思う。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "人から尊敬されたいと思う。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            {
-                text: "人に謝るのはどちらかというと嫌いだ。",
-                scores: { king: 2, knight: 0, prince: 0 }
-            },
-            // 新しい質問（ナイト）
-            {
-                text: "リーダーの立場より支える立場の方があっていると思う。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "女性に対し引っ張るより合わせてしまうことが多い。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "家事育児は積極的に協力したいタイプ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "自分よりは相手を優先するタイプ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
-            {
-                text: "衝動的な行動はどちらかというと苦手だ。",
-                scores: { king: 0, knight: 2, prince: 0 }
-            },
+            { text: "飲み会で初対面の人と話すのは得意？", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "自分の話をするより人の話を聞く方が楽しい。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "毎日LINEをするのは面倒くさいと感じる。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "飲み会の席ではつい気配りして料理を取り分ける？", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "相手に尽くすよりも、自分が尽くされる方が嬉しい？", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "たまに自分が何をしたいのかわからなくなる時がある。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "計画を立てたり、スケジュール管理が好きだ。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "パートナーには優しく甘えさせてほしいと思う。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "自分のやるべきことはきっちりこなさないと気が済まない。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "誰かが困っていたら放っておけない。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "特別扱いをされると嬉しい。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "人に頼るのは苦手で、自分でなんとかしようとする。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "カバンの中身が多くなりがち。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "デートのプランは相手に考えてほしい。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "問題が起きた時、自分が主導して解決しようとする。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "夢を持っている女性が好き。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "サプライズやプレゼントが好きで、相手に期待してしまう。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "洋服や鞄は可愛いものよりも機能性を重視する。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "自分の気持ちよりも、周りの人の意見を優先することが多い。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "流行には敏感な方である。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "相手が少し偉そうでも優柔不断な人よりマシと思う", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "女性には言いたいことが言えず、ついつい我慢してしまう。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "恋人とは「特別な日に特別な場所へ行きたい」と思う。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "仕事や家事などは効率的にこなすタイプだ。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "よく道を聞かれることが多い。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "歩く時は人の右側を歩きたい。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "頭ポンポンされるのは正直いやだと感じる。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "負ける勝負はしたくない。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "即断即決する事が苦手だと思う。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "人の目が気になる方である。", scores: { prince: 0, warrior: 0, mother: 2 } },
             // 新しい質問（プリンス）
-            {
-                text: "まわりから可愛がられるタイプだと思う。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "責任ある仕事や立場にはできるだけ就きたくない",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "自分より収入の多い女性と付き合うことに抵抗はない方だ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "自分の趣味ややりたいことを優先するタイプだ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            },
-            {
-                text: "女性に対して求めるのは癒しだ。",
-                scores: { king: 0, knight: 0, prince: 2 }
-            }
+            { text: "何かを決める時に直感を重視することが多い。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "容姿や外見についての評価が大切である。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "美容にお金を使うのが好きだ。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "可愛いものやキラキラしたものを見ると欲しくなる。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            { text: "女性には経済力を求めてしまう。", scores: { prince: 2, warrior: 0, mother: 0 } },
+            // 新しい質問（ウォリアー）
+            { text: "学校や職場ではリーダー的な立場になることが多い。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "考えたことや思いついたことに対しすぐに行動する方だ。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "周りを見ると努力が足りないと感じることが多い。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "結婚しても仕事は続けたいと思っている。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            { text: "男性も自律や自活する力が必要だと思う。", scores: { prince: 0, warrior: 2, mother: 0 } },
+            // 新しい質問（マザー）
+            { text: "家事をすることは好きな方だ。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "何か頼まれると断れないタイプだと思う。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "結婚したら家庭を優先したい。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "過去に浮気をされて許したことがある。", scores: { prince: 0, warrior: 0, mother: 2 } },
+            { text: "パートナーには安定した仕事・収入を求める。", scores: { prince: 0, warrior: 0, mother: 2 } }
         ];
 
         // 質問をシャッフル
@@ -453,46 +318,40 @@
             [questions[i], questions[j]] = [questions[j], questions[i]];
         }
 
-        const questionsContainer = document.getElementById('questions');
-        const answeredCount = document.getElementById('answered-count');
-        const progressBarFill = document.getElementById('progressBarFill');
+        const quizDiv = document.getElementById("quiz");
+        const progressBarFill = document.getElementById("progressBarFill");
+        const answeredCountSpan = document.getElementById("answeredCount");
+        const totalQuestionsSpan = document.getElementById("totalQuestions");
 
-        // 質問を表示する
-        questions.forEach((question, index) => {
-            const questionDiv = document.createElement('div');
-            questionDiv.className = 'question';
-            questionDiv.innerHTML = `
-                <p>Q${index + 1}. ${question.text}</p>
-                <label>
-                    <input type="radio" name="q${index}" value="yes">
-                    そう思う
-                </label>
-                <label>
-                    <input type="radio" name="q${index}" value="neutral">
-                    どちらとも言えない
-                </label>
-                <label>
-                    <input type="radio" name="q${index}" value="no">
-                    そう思わない
-                </label>
-            `;
-            questionsContainer.appendChild(questionDiv);
-        });
-
-        // 進捗を更新する
+        // 進捗状況を更新する関数
         function updateProgress() {
-            const answered = document.querySelectorAll('input[type="radio"]:checked').length;
-            answeredCount.textContent = answered;
-            const progress = (answered / questions.length) * 100;
+            const totalQuestions = questions.length;
+            const answeredQuestions = questions.reduce((count, _, index) => {
+                return count + (document.querySelector(`input[name="q${index}"]:checked`) ? 1 : 0);
+            }, 0);
+
+            const progress = (answeredQuestions / totalQuestions) * 100;
             progressBarFill.style.width = `${progress}%`;
+            answeredCountSpan.textContent = answeredQuestions;
+            totalQuestionsSpan.textContent = totalQuestions;
         }
 
-        // ラジオボタンの変更を監視
-        document.querySelectorAll('input[type="radio"]').forEach(radio => {
-            radio.addEventListener('change', updateProgress);
+        questions.forEach((q, index) => {
+            const questionDiv = document.createElement("div");
+            questionDiv.className = "question";
+
+            questionDiv.innerHTML = `
+                <p>${index + 1}. ${q.text}</p>
+                <label><input type="radio" name="q${index}" value="yes"> はい</label>
+                <label><input type="radio" name="q${index}" value="neutral"> どちらでもない</label>
+                <label><input type="radio" name="q${index}" value="no"> いいえ</label>
+            `;
+
+            // ラジオボタンの変更を監視
+            questionDiv.addEventListener('change', updateProgress);
+            quizDiv.appendChild(questionDiv);
         });
 
-        // フォーム送信時の処理
         document.getElementById('quiz-form').onsubmit = function(event) {
             event.preventDefault();
             
@@ -511,52 +370,60 @@
             
             // 各タイプの質問数をカウント
             const totalQuestions = {
-                king: 10,
-                knight: 10,
-                prince: 10
+                prince: 10,
+                warrior: 10,
+                mother: 10
             };
             
             // 各タイプの「そう思う」の回答数をカウント
-            let selectedAnswers = { king: 0, knight: 0, prince: 0 };
+            let selectedAnswers = { prince: 0, warrior: 0, mother: 0 };
             
             questions.forEach((question, index) => {
                 const answer = document.querySelector(`input[name="q${index}"]:checked`);
                 if (answer.value === "yes") {
-                    if (question.scores.king > 0) selectedAnswers.king++;
-                    if (question.scores.knight > 0) selectedAnswers.knight++;
                     if (question.scores.prince > 0) selectedAnswers.prince++;
+                    if (question.scores.warrior > 0) selectedAnswers.warrior++;
+                    if (question.scores.mother > 0) selectedAnswers.mother++;
                 }
                 // どちらとも言えないは0.5カウント
                 else if (answer.value === "neutral") {
-                    if (question.scores.king > 0) selectedAnswers.king += 0.5;
-                    if (question.scores.knight > 0) selectedAnswers.knight += 0.5;
                     if (question.scores.prince > 0) selectedAnswers.prince += 0.5;
+                    if (question.scores.warrior > 0) selectedAnswers.warrior += 0.5;
+                    if (question.scores.mother > 0) selectedAnswers.mother += 0.5;
                 }
             });
 
             // パーセンテージを計算
             const percentages = {
-                king: Math.round((selectedAnswers.king / totalQuestions.king) * 100),
-                knight: Math.round((selectedAnswers.knight / totalQuestions.knight) * 100),
-                prince: Math.round((selectedAnswers.prince / totalQuestions.prince) * 100)
+                prince: Math.round((selectedAnswers.prince / totalQuestions.prince) * 100),
+                warrior: Math.round((selectedAnswers.warrior / totalQuestions.warrior) * 100),
+                mother: Math.round((selectedAnswers.mother / totalQuestions.mother) * 100)
             };
 
             // 最も高いパーセンテージのタイプを決定
             let resultType = Object.entries(percentages).reduce((a, b) => a[1] > b[1] ? a : b)[0];
             let typeMapping = {
-                'king': 'キングタイプ',
-                'knight': 'ナイトタイプ',
-                'prince': 'プリンスタイプ'
+                'prince': 'プリンスタイプ',
+                'warrior': 'ウォリアータイプ',
+                'mother': 'マザータイプ'
             };
+
+            // URLからuserIdを取得
+            const currentParams = new URLSearchParams(window.location.search);
+            const userId = currentParams.get('userId');
 
             // 結果ページへのパラメータを設定
             const params = new URLSearchParams({
                 result: typeMapping[resultType],
-                king: percentages.king,
-                knight: percentages.knight,
                 prince: percentages.prince,
+                warrior: percentages.warrior,
+                mother: percentages.mother,
                 gender: 'male'
             });
+
+            if (userId) {
+                params.append('userId', userId);
+            }
 
             // 結果ページへリダイレクト
             window.location.href = `result.html?${params.toString()}`;
