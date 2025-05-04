@@ -283,7 +283,6 @@
             { text: "自分の気持ちよりも、周りの人の意見を優先することが多い。", scores: { idol: 0, career: 0, mother: 2 } },
             { text: "流行には敏感な方である。", scores: { idol: 2, career: 0, mother: 0 } },
             { text: "相手が少し偉そうでも優柔不断な人よりマシと思う", scores: { idol: 0, career: 0, mother: 2 } },
-            { text: "男性には言いたいことが言えず、ついつい我慢してしまう。", scores: { idol: 0, career: 2, mother: 0 } },
             { text: "恋人とは「特別な日に特別な場所へ行きたい」と思う。", scores: { idol: 2, career: 0, mother: 0 } },
             { text: "仕事や家事などは効率的にこなすタイプだ。", scores: { idol: 0, career: 2, mother: 0 } },
             { text: "よく道を聞かれることが多い。", scores: { idol: 0, career: 0, mother: 2 } },
@@ -298,6 +297,7 @@
             { text: "美容にお金を使うのが好きだ。", scores: { idol: 2, career: 0, mother: 0 } },
             { text: "可愛いものやキラキラしたものを見ると欲しくなる。", scores: { idol: 2, career: 0, mother: 0 } },
             { text: "男性には経済力を求めてしまう。", scores: { idol: 2, career: 0, mother: 0 } },
+            { text: "SNSで自分の写真をよく投稿する方だ。", scores: { idol: 2, career: 0, mother: 0 } },
             // 新しい質問（バリキャリ）
             { text: "学校や職場ではリーダー的な立場になることが多い。", scores: { idol: 0, career: 2, mother: 0 } },
             { text: "考えたことや思いついたことに対しすぐに行動する方だ。", scores: { idol: 0, career: 2, mother: 0 } },
@@ -408,10 +408,6 @@
                 'mother': 'マザータイプ'
             };
 
-            // URLからuserIdを取得
-            const currentParams = new URLSearchParams(window.location.search);
-            const userId = currentParams.get('userId');
-
             // 結果ページへのパラメータを設定
             const params = new URLSearchParams({
                 result: typeMapping[resultType],
@@ -420,10 +416,6 @@
                 mother: percentages.mother,
                 gender: 'female'
             });
-
-            if (userId) {
-                params.append('userId', userId);
-            }
 
             // 結果ページへリダイレクト
             window.location.href = `result.html?${params.toString()}`;
