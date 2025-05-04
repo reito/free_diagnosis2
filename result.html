@@ -440,14 +440,14 @@
         // 性別に応じてスコアのパラメータ名を取得
         const scores = userGender === 'male' 
             ? {
-                king: parseInt(urlParams.get('king')) || 0,
-                knight: parseInt(urlParams.get('knight')) || 0,
-                prince: parseInt(urlParams.get('prince')) || 0
+                "キングタイプ": parseInt(urlParams.get('king')) || 0,
+                "ナイトタイプ": parseInt(urlParams.get('knight')) || 0,
+                "プリンスタイプ": parseInt(urlParams.get('prince')) || 0
             }
             : {
-                idol: parseInt(urlParams.get('idol')) || 0,
-                career: parseInt(urlParams.get('career')) || 0,
-                nurse: parseInt(urlParams.get('nurse')) || 0
+                "アイドルタイプ": parseInt(urlParams.get('idol')) || 0,
+                "バリキャリタイプ": parseInt(urlParams.get('career')) || 0,
+                "マザータイプ": parseInt(urlParams.get('mother')) || 0
             };
 
         // バランスタイプの判定
