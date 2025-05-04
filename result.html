@@ -466,17 +466,19 @@
         }
 
         // 結果を表示
-        const resultTypeElement = document.getElementById("resultType");
-        const resultTextElement = document.getElementById("resultText");
-        const percentagesElement = document.getElementById("percentages");
+        const resultContainer = document.getElementById("result-container");
+        const resultTypeElement = document.getElementById("result-type");
+        const resultDescription = document.getElementById("result-description");
+        const resultImage = document.getElementById("result-image");
+        const resultImageContainer = document.getElementById("result-image-container");
 
         if (resultTypeElement) resultTypeElement.textContent = `あなたのタイプは「${displayType}」です！`;
-        if (resultTextElement && descriptions[displayType]) {
-            resultTextElement.innerHTML = descriptions[displayType];
+        if (resultDescription && descriptions[displayType]) {
+            resultDescription.innerHTML = descriptions[displayType];
         }
         
         // パーセンテージ表示を削除
-        if (percentagesElement) percentagesElement.style.display = 'none';
+        if (resultImageContainer) resultImageContainer.style.display = 'none';
 
         // キャラクター画像を表示
         const characterContainer = document.getElementById("character-container");
