@@ -354,7 +354,7 @@
 
         document.getElementById('quiz-form').onsubmit = function(event) {
             event.preventDefault();
-            
+
             // すべての質問に回答されているか確認
             const unansweredQuestions = questions.reduce((acc, _, index) => {
                 if (!document.querySelector(`input[name="q${index}"]:checked`)) {
@@ -367,7 +367,7 @@
                 alert(`以下の質問に回答してください：\n質問 ${unansweredQuestions.join(', ')}`);
                 return;
             }
-            
+
             // 各タイプの質問数をカウント
             const totalQuestions = {
                 idol: 10,
