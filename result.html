@@ -553,6 +553,7 @@
         console.log("Display Type:", displayType);
         console.log("Character Images:", characterImages);
         console.log("User Gender:", userGender);
+        console.log("Selected Image:", characterImages[displayType]);
 
         if (displayType === "バランスタイプ") {
             const balanceImage = characterImages["バランスタイプ"][userGender];
@@ -568,10 +569,16 @@
             }
         } else if (characterImages[displayType]) {
             console.log("Character Image for type:", characterImages[displayType]);
-            characterImage.src = characterImages[displayType].image;
-            characterImage.alt = characterImages[displayType].name;
-            characterName.textContent = characterImages[displayType].name;
-            characterContainer.style.display = "block";
+            const selectedImage = characterImages[displayType];
+            if (selectedImage && selectedImage.image) {
+                characterImage.src = selectedImage.image;
+                characterImage.alt = selectedImage.name;
+                characterName.textContent = selectedImage.name;
+                characterContainer.style.display = "block";
+            } else {
+                console.error("Invalid image data for type:", displayType);
+                characterContainer.style.display = "none";
+            }
         } else {
             console.error("Character image not found for type:", displayType);
             characterContainer.style.display = "none";
