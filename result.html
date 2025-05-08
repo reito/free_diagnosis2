@@ -495,55 +495,68 @@
         // バランスタイプの判定
         let displayType;
         if (userGender === "male") {
-            if (scores["キングタイプ"] === scores["ナイトタイプ"] && scores["キングタイプ"] === scores["プリンスタイプ"]) {
+            const maxScore = Math.max(...Object.values(scores));
+            const maxTypes = Object.entries(scores).filter(([_, score]) => score === maxScore);
+            
+            if (maxTypes.length === 3) {
                 displayType = "バランスタイプ";
-            } else if (scores["キングタイプ"] === scores["ナイトタイプ"]) {
-                displayType = "キング＆ナイトタイプ";
-            } else if (scores["ナイトタイプ"] === scores["プリンスタイプ"]) {
-                displayType = "ナイト＆プリンスタイプ";
-            } else if (scores["プリンスタイプ"] === scores["キングタイプ"]) {
-                displayType = "プリンス＆キングタイプ";
+            } else if (maxTypes.length === 2) {
+                const [type1, type2] = maxTypes.map(([type]) => type);
+                if (type1 === "キングタイプ" && type2 === "ナイトタイプ" || type1 === "ナイトタイプ" && type2 === "キングタイプ") {
+                    displayType = "キング＆ナイトタイプ";
+                } else if (type1 === "ナイトタイプ" && type2 === "プリンスタイプ" || type1 === "プリンスタイプ" && type2 === "ナイトタイプ") {
+                    displayType = "ナイト＆プリンスタイプ";
+                } else if (type1 === "プリンスタイプ" && type2 === "キングタイプ" || type1 === "キングタイプ" && type2 === "プリンスタイプ") {
+                    displayType = "プリンス＆キングタイプ";
+                } else {
+                    displayType = maxTypes[0][0];
+                }
             } else {
-                const maxScore = Math.max(...Object.values(scores));
-                displayType = Object.keys(scores).find(type => scores[type] === maxScore);
+                displayType = maxTypes[0][0];
             }
         } else {
-            if (scores["アイドルタイプ"] === scores["バリキャリタイプ"] && scores["アイドルタイプ"] === scores["マザータイプ"]) {
+            const maxScore = Math.max(...Object.values(scores));
+            const maxTypes = Object.entries(scores).filter(([_, score]) => score === maxScore);
+            
+            if (maxTypes.length === 3) {
                 displayType = "バランスタイプ";
-            } else if (scores["アイドルタイプ"] === scores["バリキャリタイプ"]) {
-                displayType = "アイドル＆バリキャリタイプ";
-            } else if (scores["バリキャリタイプ"] === scores["マザータイプ"]) {
-                displayType = "バリキャリ＆マザータイプ";
-            } else if (scores["マザータイプ"] === scores["アイドルタイプ"]) {
-                displayType = "マザー＆アイドルタイプ";
+            } else if (maxTypes.length === 2) {
+                const [type1, type2] = maxTypes.map(([type]) => type);
+                if (type1 === "アイドルタイプ" && type2 === "バリキャリタイプ" || type1 === "バリキャリタイプ" && type2 === "アイドルタイプ") {
+                    displayType = "アイドル＆バリキャリタイプ";
+                } else if (type1 === "バリキャリタイプ" && type2 === "マザータイプ" || type1 === "マザータイプ" && type2 === "バリキャリタイプ") {
+                    displayType = "バリキャリ＆マザータイプ";
+                } else if (type1 === "マザータイプ" && type2 === "アイドルタイプ" || type1 === "アイドルタイプ" && type2 === "マザータイプ") {
+                    displayType = "マザー＆アイドルタイプ";
+                } else {
+                    displayType = maxTypes[0][0];
+                }
             } else {
-                const maxScore = Math.max(...Object.values(scores));
-                displayType = Object.keys(scores).find(type => scores[type] === maxScore);
+                displayType = maxTypes[0][0];
             }
         }
 
         // 結果を表示
-        const resultContainer = document.getElementById("result-container");
-        const resultTypeElement = document.getElementById("result-type");
-        const resultDescription = document.getElementById("result-description");
-        const resultImage = document.getElementById("result-image");
-        const resultImageContainer = document.getElementById("result-image-container");
+        const resultTypeElement = document.getElementById("resultType");
+        const resultText = document.getElementById("resultText");
 
         if (resultTypeElement) resultTypeElement.textContent = `あなたのタイプは「${displayType}」です！`;
-        if (resultDescription && descriptions[displayType]) {
-            resultDescription.innerHTML = descriptions[displayType];
+        if (resultText && descriptions[displayType]) {
+            resultText.innerHTML = descriptions[displayType];
         }
-        
-        // パーセンテージ表示を削除
-        if (resultImageContainer) resultImageContainer.style.display = 'none';
 
         // キャラクター画像を表示
         const characterContainer = document.getElementById("character-container");
         const characterImage = document.getElementById("character-image");
         const characterName = document.getElementById("character-name");
 
+        console.log("Display Type:", displayType);
+        console.log("Character Images:", characterImages);
+        console.log("User Gender:", userGender);
+
         if (displayType === "バランスタイプ") {
             const balanceImage = characterImages["バランスタイプ"][userGender];
+            console.log("Balance Image:", balanceImage);
             if (balanceImage) {
                 characterImage.src = balanceImage.image;
                 characterImage.alt = balanceImage.name;
@@ -554,6 +567,7 @@
                 characterContainer.style.display = "none";
             }
         } else if (characterImages[displayType]) {
+            console.log("Character Image for type:", characterImages[displayType]);
             characterImage.src = characterImages[displayType].image;
             characterImage.alt = characterImages[displayType].name;
             characterName.textContent = characterImages[displayType].name;
@@ -562,6 +576,12 @@
             console.error("Character image not found for type:", displayType);
             characterContainer.style.display = "none";
         }
+
+        // 画像の読み込みエラーを監視
+        characterImage.onerror = function() {
+            console.error("Failed to load image:", this.src);
+            characterContainer.style.display = "none";
+        };
 
         // グラフの表示処理
         if (userGender === 'female') {
