@@ -539,9 +539,10 @@
 
         // キャラクター画像を表示
         const characterContainer = document.getElementById("character-container");
+        const characterImage = document.getElementById("character-image");
+        const characterName = document.getElementById("character-name");
+
         if (displayType === "バランスタイプ") {
-            const characterImage = document.getElementById("character-image");
-            const characterName = document.getElementById("character-name");
             const balanceImage = characterImages["バランスタイプ"][userGender];
             if (balanceImage) {
                 characterImage.src = balanceImage.image;
@@ -550,10 +551,9 @@
                 characterContainer.style.display = "block";
             } else {
                 console.error("Balance image not found for gender:", userGender);
+                characterContainer.style.display = "none";
             }
         } else if (characterImages[displayType]) {
-            const characterImage = document.getElementById("character-image");
-            const characterName = document.getElementById("character-name");
             characterImage.src = characterImages[displayType].image;
             characterImage.alt = characterImages[displayType].name;
             characterName.textContent = characterImages[displayType].name;
